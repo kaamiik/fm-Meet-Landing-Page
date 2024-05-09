@@ -1,0 +1,211 @@
+@use "variables" as *;
+@use "breakpoints" as *;
+@use "functions" as *;
+@use "reset";
+@use "typography";
+
+.logo {
+  margin-inline: auto;
+  margin-top: rem(48);
+
+  @include breakpoint(large) {
+    margin-top: rem(80);
+  }
+}
+
+.main-header {
+  display: grid;
+  gap: rem(48);
+  margin-top: rem(64);
+  overflow-x: hidden;
+
+  @include breakpoint(medium) {
+    gap: rem(72);
+  }
+
+  @include breakpoint(large) {
+    grid-template-columns: 1fr rem(540) 1fr;
+    margin-top: rem(108);
+    gap: rem(88);
+    align-items: center;
+  }
+}
+
+.left-image {
+  max-width: 110%;
+  margin-left: -5%;
+  margin-right: -5%;
+  justify-self: center;
+
+  @include breakpoint(large) {
+    margin-left: -10%;
+    margin-right: revert;
+    justify-self: end;
+  }
+}
+
+.right-image {
+  display: none;
+
+  @include breakpoint(large) {
+    display: block;
+    max-width: 110%;
+    margin-right: -10%;
+  }
+}
+
+.header-content {
+  max-width: rem(464);
+  margin-inline: auto;
+  padding: 0 rem(24);
+  @include flow-content(rem(32));
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(16);
+  }
+
+  @include breakpoint(large) {
+    max-width: revert;
+  }
+}
+
+.meet {
+  margin-top: rem(64);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: rem(64);
+
+  @include breakpoint(medium) {
+    margin-top: rem(80);
+  }
+
+  @include breakpoint(large) {
+    margin-top: rem(110);
+  }
+}
+
+.section-numbering {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meet-images {
+  padding: 0 rem(24);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: rem(24);
+
+  @include breakpoint(medium) {
+    padding: 0 rem(39);
+    gap: rem(11);
+  }
+
+  @include breakpoint(large) {
+    padding: 0 rem(165);
+    gap: rem(30);
+  }
+
+  img {
+    width: 151px;
+    height: auto;
+    object-fit: cover;
+    border-radius: rem(8);
+
+    @include breakpoint(medium) {
+      width: 164px;
+    }
+
+    @include breakpoint(large) {
+      width: 255px;
+    }
+  }
+}
+
+.meet-contents {
+  max-width: rem(576);
+  margin-inline: auto;
+  padding: 0 rem(24);
+  @include flow-content(rem(32));
+
+  @include breakpoint(large) {
+    max-width: rem(540);
+  }
+}
+
+.footer {
+  position: relative;
+  background-image: url("/assets/mobile/image-footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  margin-top: rem(64 + 112);
+
+  .section-numbering {
+    position: relative;
+    z-index: 2;
+    transform: translateY(rem(-112));
+  }
+
+  @include breakpoint(medium) {
+    background-image: url("/assets/tablet/image-footer.jpg");
+    margin-top: rem(80 + 112);
+  }
+
+  @include breakpoint(large) {
+    background-image: url("/assets/desktop/image-footer.jpg");
+  }
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $medium-blue;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.footer-contents {
+  position: relative;
+  z-index: 2;
+  max-width: rem(576);
+  margin-inline: auto;
+  margin-top: rem(-48);
+  padding: 0 rem(24);
+  padding-bottom: rem(72);
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+  align-items: center;
+
+  @include breakpoint(medium) {
+    h2 {
+      max-width: rem(400);
+    }
+  }
+
+  @include breakpoint(large) {
+    max-width: rem(1110);
+    margin-top: revert;
+    padding: rem(104) 0;
+    padding-top: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: left;
+
+    p {
+      flex-basis: rem(350);
+    }
+  }
+}

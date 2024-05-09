@@ -1,0 +1,115 @@
+@use "variables" as *;
+@use "breakpoints" as *;
+@use "functions" as *;
+
+h1 {
+  font-size: rem(40);
+  font-weight: 900;
+  color: $dark-blue;
+
+  @include breakpoint(medium) {
+    font-size: rem(48);
+  }
+  @include breakpoint(large) {
+    font-size: rem(64);
+  }
+}
+
+h2 {
+  font-size: rem(32);
+  font-weight: 900;
+  color: $dark-blue;
+
+  @include breakpoint(medium) {
+    font-size: rem(40);
+  }
+}
+
+.text-footer > h2 {
+  color: $off-white;
+}
+
+.overline {
+  display: block;
+  margin-bottom: rem(16);
+  color: $medium-blue;
+  font-size: rem(16);
+  font-weight: 900;
+  font-style: normal;
+  line-height: 1.62;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-size: rem(16);
+  font-weight: 900;
+  line-height: 1.62;
+  border-radius: rem(29);
+}
+
+.btn-download {
+  padding: rem(16) rem(40);
+}
+
+.btn-info {
+  padding: rem(16) rem(29);
+  background-color: $purple;
+
+  &:hover,
+  &:focus {
+    background-color: $deep-purple;
+  }
+}
+
+.btn__bg-heading {
+  background-color: $medium-blue;
+
+  strong {
+    color: $light-blue;
+    margin-left: rem(4);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $deep-blue;
+  }
+}
+.btn__bg-footer {
+  background: $purple;
+
+  strong {
+    color: $light-purple;
+    margin-left: rem(4);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $deep-purple;
+  }
+}
+
+.v1 {
+  border-left: 0.1px solid $light-grey;
+  height: 84px;
+  width: 1px;
+}
+
+.item-number {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $light-grey;
+  background-color: $off-white;
+  font-size: rem(16);
+  line-height: 1.62;
+  font-weight: 900;
+  border: 1px solid rgba(135, 135, 157, 75%);
+  border-radius: 50%;
+}
